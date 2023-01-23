@@ -15,7 +15,6 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
-    // TODO: implement initState
     context.read<LoginBloc>().add(CheckLogin());
 
     super.initState();
@@ -40,7 +39,7 @@ class _SplashScreenState extends State<SplashScreen> {
               // ignore: use_build_context_synchronously
               Navigator.pushAndRemoveUntil(
                 context,
-                MaterialPageRoute(builder: (builder) => const LoginScreen()),
+                MaterialPageRoute(builder: (builder) => LoginScreen()),
                 (route) => false,
               );
             }
