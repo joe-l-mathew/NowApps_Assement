@@ -10,7 +10,6 @@ part 'login_state.dart';
 
 class LoginBloc extends Bloc<LoginEvent, LoginState> {
   LoginBloc() : super(LoginInitial(false)) {
-    print("Checking started");
     on<CheckLogin>((event, emit) async {
       bool status = await getLoginStatus();
       print(status);

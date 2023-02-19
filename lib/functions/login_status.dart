@@ -12,3 +12,8 @@ Future<bool> getLoginStatus() async {
     return loginStatus;
   }
 }
+
+Future<void> logout()async{
+   final prefs = await SharedPreferences.getInstance();
+    await prefs.setBool(loginKey, false);
+}

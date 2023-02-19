@@ -23,22 +23,25 @@ class OtpScreen extends StatelessWidget {
             SizedBox(
               height: height * .1,
             ),
-            Pinput(
-              controller: otp_controller,
-              senderPhoneNumber: "9496283576",
-              length: 6,
-              autofocus: true,
-              defaultPinTheme: PinTheme(
-                width: 56,
-                height: 56,
-                textStyle: const TextStyle(
-                    fontSize: 20,
-                    color: Color.fromARGB(255, 255, 255, 255),
-                    fontWeight: FontWeight.w600),
-                decoration: BoxDecoration(
-                  border:
-                      Border.all(color: const Color.fromARGB(255, 0, 140, 255)),
-                  borderRadius: BorderRadius.circular(20),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Pinput(
+                controller: otp_controller,
+                senderPhoneNumber: "9496283576",
+                length: 6,
+                autofocus: true,
+                defaultPinTheme: PinTheme(
+                  width: 56,
+                  height: 56,
+                  textStyle: const TextStyle(
+                      fontSize: 20,
+                      color: Color.fromARGB(255, 0, 0, 0),
+                      fontWeight: FontWeight.w600),
+                  decoration: BoxDecoration(
+                    border: Border.all(
+                        color: const Color.fromARGB(255, 0, 140, 255)),
+                    borderRadius: BorderRadius.circular(20),
+                  ),
                 ),
               ),
             ),
@@ -49,6 +52,7 @@ class OtpScreen extends StatelessWidget {
                     // ignore: use_build_context_synchronously
                     final prefs = await SharedPreferences.getInstance();
                     await prefs.setBool(loginKey, true);
+                    // ignore: use_build_context_synchronously
                     Navigator.pushAndRemoveUntil(
                       context,
                       MaterialPageRoute(
